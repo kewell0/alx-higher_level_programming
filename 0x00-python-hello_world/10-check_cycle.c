@@ -1,28 +1,26 @@
-#include "lists.h"
+#ifndef LISTS_H
+#define LISTS_H
+
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * check_cycle - checks if a singly linked list has a cycle in it
- * list - linked list
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
  *
- * Return: 0 if cycle, 1 if no cycle
+ * Description: singly linked list node structure
+ *
  */
-
-int check_cycle(listint_t *list)
+typedef struct listint_s
 {
-	listint_t *tortoise, *hare;
+    int n;
+    struct listint_s *next;
+} listint_t;
 
-	tortoise = list;
-	hare = list;
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
-	while (tortoise && hare)
-	{
-		if (hare->next == NULL)
-			return (0);
-		tortoise = tortoise->next;
-		hare = hare->next->next;
-		if (tortoise == hare)
-			return (1);
-	}
-
-	return (0);
-}
+#endif /* LISTS_H */
