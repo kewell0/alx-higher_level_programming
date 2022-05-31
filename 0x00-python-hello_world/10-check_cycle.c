@@ -1,26 +1,24 @@
-#ifndef LISTS_H
-#define LISTS_H
-
-#include <stdlib.h>
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * struct listint_s - singly linked list
- * @n: integer
- * @next: points to the next node
+ * check_cycle - check for loop in
+ * linked list
  *
- * Description: singly linked list node structure
- *
+ * @list : linked list head
+ * Return: 0 OR 1
  */
-typedef struct listint_s
+int check_cycle(listint_t *list)
 {
-    int n;
-    struct listint_s *next;
-} listint_t;
+	listint_t *ptr = list, *str = list;
 
-size_t print_listint(const listint_t *h);
-listint_t *add_nodeint(listint_t **head, const int n);
-void free_listint(listint_t *head);
-int check_cycle(listint_t *list);
-
-#endif /* LISTS_H */
+	while (ptr && str && str->next)
+	{
+		ptr = ptr->next;
+		str = str->next->next;
+		if (str == ptr)
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
