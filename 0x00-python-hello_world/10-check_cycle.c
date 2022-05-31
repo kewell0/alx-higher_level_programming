@@ -1,21 +1,26 @@
 #include "lists.h"
 
 /**
- * check_cycle - Using Floyd's Cycle-Finding Algorithm to check for cycle
- * in a linked list.
- * @list: the linked list object
- * Return: 0 if there is no cycle, 1 if there is a cycle
+ * check_cycle - checks if a singly linked list has a cycle in it
+ * list - linked list
+ *
+ * Return: 0 if cycle, 1 if no cycle
  */
+
 int check_cycle(listint_t *list)
 {
-	listint_t *slow, *fast;
+	listint_t *tortoise, *hare;
 
-	slow = fast = list;
-	while (slow && fast && fast->next)
+	tortoise = list;
+	hare = list;
+
+	while (tortoise && hare)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		if (hare->next == NULL)
+			return (0);
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
 			return (1);
 	}
 
