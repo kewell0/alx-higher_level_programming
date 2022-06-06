@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec("".join(['p','r','i','n','t', '(\"#pythoniscool\")']))
+__import__("sys").stdout.write("#pythoniscool" + "\n")
