@@ -67,4 +67,3 @@ class Rectangle:
     def __del__(self):
         """method called when del keyword is used"""
         print("Bye rectangle...")
-
