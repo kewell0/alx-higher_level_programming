@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string():
-    magic_string.c, t = (magic_string.__dict__.get('c', 0) + 1, ', Holberton')
-    return '{:s}{:s}'.format(t[2:], t * (magic_string.c - 1))
+    setattr(magic_string, "n", getattr(magic_string, "n", 0) + 1)
+    return ("Holberton, " * getattr(magic_string, "n", 0))[:-2]
