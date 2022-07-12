@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A test suite for models/square.py"""
+"""A test case for models/square.py"""
 
 import unittest
 
