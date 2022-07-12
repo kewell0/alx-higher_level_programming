@@ -146,4 +146,3 @@ class Rectangle(Base):
                 "y": self.y
                 }
         return result
-

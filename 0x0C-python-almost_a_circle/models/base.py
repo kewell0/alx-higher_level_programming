@@ -143,4 +143,3 @@ class Base:
         show("magenta", list_squares)
 
         turtle.exitonclick()
-
