@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
 function factorial (fact) {
-    if (fact === 0) {
-        return 0;
-    } else if (fact ===1) {
-        return 1;
-    } else {
-        return (fact * factorial(fact -1));
-    }
+  if (fact === 0) {
+    return 0;
+  } else if (fact === 1) {
+    return 1;
+  } else {
+    return (fact * factorial(fact - 1));
+  }
 }
 
 const myInt = parseInt(process.argv[2]);
